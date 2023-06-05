@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmple1;
+package com.alaatamli.simpletest.batch.exmpleOneGetStarted;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -8,14 +8,18 @@ import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class BatchExampleOneConfig {
 
     @Autowired
+    @Lazy
     private JobBuilderFactory jobs;
 
     @Autowired
+    @Lazy
     private StepBuilderFactory steps;
 
 
@@ -30,7 +34,8 @@ public class BatchExampleOneConfig {
     }
 
     @Bean
-    public Job exampleOneJob(){
+    @Primary
+    public Job jobOne(){
         return jobs.get("exmpleOne")
                 .incrementer(new RunIdIncrementer())
                 .start(stepOne())

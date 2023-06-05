@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmple1;
+package com.alaatamli.simpletest.batch.exmpleOneGetStarted;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
