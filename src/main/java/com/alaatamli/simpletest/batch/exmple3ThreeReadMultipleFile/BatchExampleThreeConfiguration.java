@@ -30,8 +30,15 @@ public class BatchExampleThreeConfiguration {
     @Lazy
     private StepBuilderFactory stepBuilderFactory;
 
-    @Value("classPath:/input/ex3/inputData*.csv")
+//    @Value("classPath:/input/ex3/*.c/*/sv")
+//    @Value("classPath:/input/ex3/*.csv")
+//    private Resource[] inputResources;
+    @Value("classpath:/input/ex3/*.csv")
     private Resource[] inputResources;
+
+    @Autowired
+    @Lazy
+    private FlatFileItemReader<Employee> reader;
 
 
     @Bean
@@ -55,7 +62,7 @@ public class BatchExampleThreeConfiguration {
     public MultiResourceItemReader<Employee> multipleResourceItemReader(){
         MultiResourceItemReader<Employee> resourceItemReader = new MultiResourceItemReader<Employee>();
         resourceItemReader.setResources(inputResources);
-        resourceItemReader.setDelegate( readerOneFile() );
+        resourceItemReader.setDelegate( reader );
         return resourceItemReader;
     }
 
@@ -65,10 +72,8 @@ public class BatchExampleThreeConfiguration {
 
         //Create reader instance
         FlatFileItemReader<Employee> reader = new FlatFileItemReader<Employee>();
-
         //Set number of lines to skips. Use it if file has header rows.
         reader.setLinesToSkip(1);
-
         //Configure how each line will be parsed and mapped to different values
         reader.setLineMapper(new DefaultLineMapper() {
             {
