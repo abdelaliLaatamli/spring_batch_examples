@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmpleTwoReadFromCSV;
+package com.alaatamli.simpletest.batch.exmple2TwoReadFromCSV;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

@@ -29,6 +29,10 @@ public class TestController {
     @Autowired
     @Qualifier("jobTwo")
     Job jobTwo;
+
+    @Autowired
+    @Qualifier("jobThree")
+    Job jobThree;
     @GetMapping()
     public ResponseEntity<String> getTest(){
         return ResponseEntity.ok( "test is works now !!" );
@@ -47,13 +51,21 @@ public class TestController {
     }
 
     @GetMapping("/ex2")
-
     public ResponseEntity<String> startExampleTwo() throws JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
         JobParameters parameters = new JobParametersBuilder()
                 .addString("jobId" , String.valueOf(System.currentTimeMillis()))
                 .toJobParameters();
         jobLauncher.run( jobTwo , parameters );
         return ResponseEntity.ok("Batch CSV example 2 is done !!!");
+    }
+
+    @GetMapping("/ex3")
+    public ResponseEntity<String> startExampleThree() throws JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
+        JobParameters parameters = new JobParametersBuilder()
+                .addString("jobId" , String.valueOf(System.currentTimeMillis()))
+                .toJobParameters();
+        jobLauncher.run( jobThree , parameters );
+        return ResponseEntity.ok("Batch CSV example 3 is done !!!");
     }
 
 }
