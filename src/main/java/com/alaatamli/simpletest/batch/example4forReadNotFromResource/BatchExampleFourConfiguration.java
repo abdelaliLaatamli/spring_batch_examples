@@ -1,7 +1,7 @@
-package com.alaatamli.simpletest.batch.exmple4forReadNotFromResource;
+package com.alaatamli.simpletest.batch.example4forReadNotFromResource;
 
-import com.alaatamli.simpletest.batch.exmple2TwoReadFromCSV.Employee;
-import com.alaatamli.simpletest.batch.exmple3ThreeReadMultipleFile.ConsoleItemWriter;
+import com.alaatamli.simpletest.batch.example2TwoReadFromCSV.Employee;
+import com.alaatamli.simpletest.batch.example3ThreeReadMultipleFile.ConsoleItemWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;

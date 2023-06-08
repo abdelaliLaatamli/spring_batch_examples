@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmple2TwoReadFromCSV;
+package com.alaatamli.simpletest.batch.example2TwoReadFromCSV;
 
 import org.springframework.batch.item.ItemProcessor;
 

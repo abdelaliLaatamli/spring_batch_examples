@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmple1OneGetStarted;
+package com.alaatamli.simpletest.batch.example1OneGetStarted;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

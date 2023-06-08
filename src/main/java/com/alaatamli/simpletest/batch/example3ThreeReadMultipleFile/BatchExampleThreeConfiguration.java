@@ -1,6 +1,6 @@
-package com.alaatamli.simpletest.batch.exmple3ThreeReadMultipleFile;
+package com.alaatamli.simpletest.batch.example3ThreeReadMultipleFile;
 
-import com.alaatamli.simpletest.batch.exmple2TwoReadFromCSV.Employee;
+import com.alaatamli.simpletest.batch.example2TwoReadFromCSV.Employee;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;

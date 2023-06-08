@@ -1,4 +1,4 @@
-package com.alaatamli.simpletest.batch.exmple3ThreeReadMultipleFile;
+package com.alaatamli.simpletest.batch.example3ThreeReadMultipleFile;
 
 import org.springframework.batch.item.ItemWriter;
 
